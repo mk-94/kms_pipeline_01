@@ -17,4 +17,4 @@ deploy:
   keep_history: true
   local_dir: dist/kms_01
   on:
-    branch: main
+    branch: gh-pages
