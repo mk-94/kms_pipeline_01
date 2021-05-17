@@ -1,0 +1,11 @@
+<app-delete-alert></app-delete-alert>
+<app-add-task></app-add-task>
+<app-category></app-category>
+
+<app-list [list]="taskService.taskList" [title]="'Tasks'"></app-list>
+
+<app-list [list]="taskService.doneList" [title]="'Done'"></app-list>
+
+
+<app-search></app-search>
+<app-list [list]="taskService.resultSearchedList" [title]="'Search'"></app-list>
