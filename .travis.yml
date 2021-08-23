@@ -1,20 +1,22 @@
 language: node_js
 node_js:
   - 14
-cache: npm
+cache:
+  directories:
+    - ./node-modules
 
 install:
-  - npm install -g @angular/cli
   - npm install
 
 script:
-  - ng build --prod --base-href ./kms_01
+  - npm run-script build
+  - cd dist/kms_01
+  - cp index.html 404.html
 
 deploy:
   provider: pages
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
-  keep_history: true
   local_dir: dist/kms_01
   on:
     branch: main
