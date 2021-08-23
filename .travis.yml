@@ -1,7 +1,9 @@
 language: node_js
 node_js:
   - 14
-cache: npm
+cache:
+  directories:
+    - ./node-modules
 
 install:
   - npm install -g @angular/cli
@@ -9,6 +11,7 @@ install:
 
 script:
   - ng build --prod --base-href ./kms_01
+  - pwd
 
 deploy:
   provider: pages
